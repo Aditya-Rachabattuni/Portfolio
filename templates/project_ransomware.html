@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block title %}Ransomware Classification{% endblock %}
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-center mb-4">Ransomware Classification and Detection</h1>
+    <p class="text-justify">This project focuses on developing a machine learning model to detect ransomware by classifying executable files based on their attributes. Using <strong>Decision Tree</strong> and <strong>Random Forest</strong> algorithms, I built a robust system capable of accurately classifying files as either safe or infected with ransomware.</p>
+
+    <h3>Technologies Used</h3>
+    <ul>
+        <li><strong>Python</strong>: Core programming language used for machine learning model development.</li>
+        <li><strong>Django</strong>: Web framework used to build the user interface and manage backend operations.</li>
+        <li><strong>SQLite</strong>: Relational database used for storing uploaded files and classification results.</li>
+        <li><strong>HTML, CSS, JavaScript</strong>: Frontend technologies used to design and implement the user interface for file uploads and results display.</li>
+    </ul>
+
+    <h3>Project Overview</h3>
+    <p class="text-justify">This project utilizes machine learning techniques to detect ransomware by analyzing executable files. The model is trained on various features such as <strong>file size</strong>, <strong>subsystem version</strong>, <strong>entry point</strong>, and other metadata extracted from executable files. The trained machine learning model is then deployed in a Django-based web application, which allows users to upload files and receive real-time classification results. The system classifies files as either <strong>safe</strong> or <strong>ransomware-infected</strong>.</p>
+
+    <h3>GitHub Repository</h3>
+    <p class="text-justify">You can find the complete source code and detailed implementation of this project on my GitHub repository:</p>
+    <a href="https://github.com/Aditya-Rachabattuni/Ransomware_Classification_ML.git" class="btn btn-primary" target="_blank">
+        View GitHub Repository
+    </a>
+
+    <h3>Data Collection & Preprocessing</h3>
+    <p class="text-justify">The dataset for this project was curated by collecting both benign and ransomware-infected executable files. The files were analyzed to extract various features that can help differentiate between malicious and safe files. Some of the features extracted include:</p>
+    <ul>
+        <li><strong>File Size</strong>: The size of the executable file is one of the distinguishing features between malicious and benign files.</li>
+        <li><strong>Subsystem Version</strong>: The subsystem version provides information on the compatibility of the executable file and can give insights into its legitimacy.</li>
+        <li><strong>File Attributes</strong>: Various other file attributes such as timestamp, number of sections, and entry point are also used to determine if a file is malicious.</li>
+    </ul>
+    <p class="text-justify">The data preprocessing steps included feature scaling, handling missing data, and encoding categorical variables, ensuring that the dataset is ready for model training.</p>
+
+    <h3>Model Development</h3>
+    <p class="text-justify">The classification model was developed using two machine learning algorithms:</p>
+    <ul>
+        <li><strong>Decision Tree Classifier</strong>: A tree-based algorithm that splits the data into branches based on feature values. It’s simple to understand and interpret, making it an ideal choice for this classification problem.</li>
+        <li><strong>Random Forest Classifier</strong>: An ensemble method that combines multiple decision trees to improve classification accuracy and reduce overfitting. This model generally performs better on real-world data due to its ability to handle complexity and variance in data.</li>
+    </ul>
+    <p class="text-justify">The models were trained using the features extracted from the dataset and validated through cross-validation to assess performance. After training, the models were evaluated on several metrics, including <strong>accuracy</strong>, <strong>precision</strong>, <strong>recall</strong>, and <strong>F1-score</strong>, to ensure reliable results.</p>
+
+    <h3>Web Application Interface</h3>
+    <p class="text-justify">The project also includes a user-friendly web application that allows users to upload executable files for classification. The Django framework was used to build the application, and the following features were incorporated:</p>
+    <ul>
+        <li><strong>File Upload</strong>: Users can upload executable files through a simple form on the website. The file is then processed for classification by the trained machine learning model.</li>
+        <li><strong>Real-Time Classification</strong>: After file upload, the system immediately processes the file, classifies it, and displays the result (either "Safe" or "Ransomware Infected").</li>
+        <li><strong>Result Display</strong>: The result is shown on the web page, indicating whether the uploaded file is safe or infected. Users can also view additional details about the classification process.</li>
+        <li><strong>Backend Database (SQLite)</strong>: The uploaded files and classification results are stored in an SQLite database, allowing for record-keeping and retrieval of past classifications.</li>
+    </ul>
+
+    <h3>Key Features</h3>
+    <ul>
+        <li>Real-time file analysis for classification using machine learning algorithms (Decision Tree and Random Forest).</li>
+        <li>User-friendly web application interface built with <strong>Django</strong> for easy file upload and results display.</li>
+        <li>Secure backend using <strong>SQLite</strong> for storing uploaded files and classification data.</li>
+        <li>Interactive front-end with <strong>HTML, CSS, and JavaScript</strong> for a seamless user experience.</li>
+        <li>Model performance evaluation based on metrics such as <strong>accuracy</strong>, <strong>precision</strong>, and <strong>recall</strong>.</li>
+        <li>Easy deployment and scalable architecture for future extensions and improvements.</li>
+    </ul>
+
+    <h3>Challenges & Future Work</h3>
+    <p class="text-justify">During the project, several challenges were encountered, including handling large file sizes, ensuring the accuracy of the classification models, and addressing imbalanced datasets. In the future, I plan to:</p>
+    <ul>
+        <li>Improve the dataset by incorporating more diverse file samples from different sources.</li>
+        <li>Enhance the user interface to allow for additional features, such as the ability to view the file metadata or submit multiple files at once.</li>
+        <li>Experiment with more advanced machine learning algorithms such as <strong>Support Vector Machines</strong> and <strong>XGBoost</strong> for potentially better accuracy and performance.</li>
+    </ul>
+</div>
+{% endblock %}

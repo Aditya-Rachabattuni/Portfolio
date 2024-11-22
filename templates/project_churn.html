@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block title %}Dynamic Churn Prediction{% endblock %}
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-center mb-4">Dynamic Churn Prediction</h1>
+    <p class="text-justify">This project aims to predict customer churn using machine learning algorithms based on various customer data such as <strong>monthly expenses</strong>, <strong>income</strong>, and <strong>tenure</strong> with the company. By leveraging predictive analytics, the system can help businesses identify customers at risk of leaving and take proactive measures to retain them.</p>
+
+    <h3>Technologies Used</h3>
+    <ul>
+        <li><strong>Python</strong>: The primary programming language used for data analysis, model training, and integration with the Django web application. Libraries such as Pandas, Scikit-learn, and Matplotlib were used.</li>
+        <li><strong>Django</strong>: Web framework used for building the web application, which allows organizations to input customer data and view churn predictions in real-time.</li>
+        <li><strong>SQLite</strong>: A relational database used to store customer data and prediction results. SQLite is lightweight and efficient for this project’s requirements.</li>
+        <li><strong>HTML, CSS, JavaScript</strong>: Frontend technologies used to design the user interface for easy input of customer data and display of prediction results.</li>
+    </ul>
+
+    <h3>Project Overview</h3>
+    <p class="text-justify">The project focuses on predicting whether a customer will churn (leave the service) or stay. It leverages machine learning models to analyze customer data and provide predictions. The web application built with Django allows organizations to input various customer attributes such as <strong>monthly expenses</strong>, <strong>tenure</strong>, <strong>age</strong>, and <strong>income</strong>. Based on these inputs, the model predicts the likelihood of the customer churning.</p>
+    <p class="text-justify">By understanding churn risk, businesses can take preventive actions, such as offering targeted promotions or personalized services to high-risk customers, helping reduce overall churn rates.</p>
+
+    <h3>GitHub Repository</h3>
+    <p class="text-justify">You can find the complete source code and detailed implementation of this project on my GitHub repository:</p>
+    <a href="https://github.com/Aditya-Rachabattuni/Churn_Prediction_ML.git" class="btn btn-primary" target="_blank">
+        View GitHub Repository
+    </a>
+
+    <h3>Data Collection & Preprocessing</h3>
+    <p class="text-justify">The dataset for this project consists of customer records, including both churned and non-churned customers. The dataset was collected from an organization’s customer management system, and it includes various customer attributes. The data preprocessing steps included:</p>
+    <ul>
+        <li><strong>Feature Selection</strong>: Important features such as <strong>monthly expenses</strong>, <strong>income</strong>, <strong>tenure</strong>, <strong>age</strong>, and <strong>subscription type</strong> were selected for model training.</li>
+        <li><strong>Data Cleaning</strong>: Missing values were handled using imputation techniques, and outliers were removed to ensure the dataset was clean and ready for training.</li>
+        <li><strong>Feature Scaling</strong>: Standardization was applied to the numerical features to scale them within the same range, ensuring the model performs better.</li>
+        <li><strong>Encoding Categorical Variables</strong>: Categorical features, such as subscription type or geographical region, were converted into numerical values using techniques like one-hot encoding.</li>
+    </ul>
+
+    <h3>Model Development</h3>
+    <p class="text-justify">The classification model was developed using various machine learning algorithms to predict churn. The following algorithms were used:</p>
+    <ul>
+        <li><strong>Logistic Regression</strong>: A linear model that outputs probabilities for binary classification problems. It was chosen for its simplicity and interpretability.</li>
+        <li><strong>Random Forest Classifier</strong>: An ensemble method that uses multiple decision trees to improve the prediction accuracy and reduce overfitting. It is well-suited for complex data with multiple features.</li>
+        <li><strong>Support Vector Machine (SVM)</strong>: A powerful classification algorithm that works well with high-dimensional data. It was used as an alternative model to improve accuracy.</li>
+    </ul>
+    <p class="text-justify">The models were trained using <strong>80% of the dataset</strong> for training and <strong>20% for testing</strong>. Hyperparameter tuning was performed using grid search to find the optimal settings for each model. The models were evaluated on several performance metrics:</p>
+    <ul>
+        <li><strong>Accuracy</strong>: The overall percentage of correct predictions.</li>
+        <li><strong>Precision</strong>: The proportion of true positive predictions out of all positive predictions.</li>
+        <li><strong>Recall</strong>: The proportion of true positive predictions out of all actual positive cases (churned customers).</li>
+        <li><strong>F1-Score</strong>: The harmonic mean of precision and recall, providing a balanced measure of the model’s performance.</li>
+    </ul>
+    <p class="text-justify">The Random Forest classifier showed the highest performance in terms of both precision and recall, making it the final model deployed in the web application.</p>
+
+    <h3>Web Application Interface</h3>
+    <p class="text-justify">The Django web application was developed to provide an easy-to-use interface for businesses to input customer data and receive churn predictions. The following features were implemented:</p>
+    <ul>
+        <li><strong>Data Input Form</strong>: Users can input customer attributes such as <strong>monthly expenses</strong>, <strong>income</strong>, <strong>tenure</strong>, and <strong>age</strong> through a simple form.</li>
+        <li><strong>Real-Time Prediction</strong>: After entering the data, the system predicts whether the customer is likely to churn and displays the probability of churn on the screen.</li>
+        <li><strong>Historical Data Display</strong>: The app shows the past predictions for each customer along with the inputs provided, stored in an SQLite database for future reference.</li>
+        <li><strong>Interactive Results</strong>: Results are displayed clearly, with a confidence score indicating the likelihood of churn, allowing businesses to make informed decisions.</li>
+    </ul>
+
+    <h3>Challenges & Future Work</h3>
+    <p class="text-justify">Several challenges were encountered during the development of this project:</p>
+    <ul>
+        <li><strong>Imbalanced Dataset</strong>: Churn prediction typically suffers from imbalanced datasets, where the number of non-churned customers is significantly higher than the churned customers. In the future, techniques like <strong>SMOTE</strong> (Synthetic Minority Over-sampling Technique) or <strong>undersampling</strong> the majority class can be implemented to balance the dataset.</li>
+        <li><strong>Feature Engineering</strong>: The model's performance could be improved with more advanced feature engineering, such as including customer interactions, transaction history, and sentiment analysis of customer feedback.</li>
+        <li><strong>Model Performance</strong>: While the Random Forest classifier provided good results, experimenting with more advanced models like <strong>XGBoost</strong> or <strong>neural networks</strong> could further enhance the prediction accuracy.</li>
+    </ul>
+    <p class="text-justify">In the future, I plan to:</p>
+    <ul>
+        <li>Enhance the model by adding more features, including <strong>transactional data</strong> and <strong>customer service interactions</strong>, which could be crucial in churn prediction.</li>
+        <li>Deploy the application for real-time use in a production environment and integrate it with customer relationship management (CRM) systems to automate customer retention strategies.</li>
+        <li>Experiment with more advanced algorithms and fine-tune the models for better accuracy and scalability.</li>
+    </ul>
+</div>
+{% endblock %}

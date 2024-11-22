@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Projects{% endblock %}
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-center mb-4">My Projects</h1>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm transition-effect">
+                <div class="card-body">
+                    <h5 class="card-title">Ransomware Classification and Detection</h5>
+                    <p class="card-text text-justify">A machine learning project focused on identifying and classifying executable files as either safe or ransomware infected using Decision Tree and Random Forest algorithms.</p>
+                    <a href="{% url 'project_ransomware' %}" class="btn btn-primary">View Project</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm transition-effect">
+                <div class="card-body">
+                    <h5 class="card-title">Dynamic Churn Prediction</h5>
+                    <p class="card-text text-justify">This project uses machine learning techniques to predict customer churn based on features like monthly expenses, income, and tenure, helping organizations retain valuable customers.</p>
+                    <a href="{% url 'project_churn' %}" class="btn btn-primary">View Project</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm transition-effect">
+                <div class="card-body">
+                    <h5 class="card-title">Spam Filtering with SVM</h5>
+                    <p class="card-text text-justify">A spam detection system using Support Vector Machine (SVM) classifier that distinguishes between spam and legitimate messages based on text features.</p>
+                    <a href="{% url 'project_spam' %}" class="btn btn-primary">View Project</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

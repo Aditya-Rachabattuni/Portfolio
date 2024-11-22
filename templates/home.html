@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="container my-5 text-center">
+    <h1 class="display-4 fw-bold">Welcome to My Portfolio</h1>
+    <p class="lead">I am Aditya Rachabattuni, a B.Tech graduate in Computer Science with a passion for Machine Learning and Software Development.</p>
+    <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+        <a href="{% url 'about' %}" class="btn btn-primary btn-lg shadow">Learn More About Me</a>
+        <a href="{% url 'resume' %}" class="btn btn-outline-secondary btn-lg shadow">View My Resume</a>
+    </div>
+</div>
+
+<div class="container my-5">
+    <h2 class="text-center mb-4">What I Offer</h2>
+    <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+            <div class="card border-0 shadow-sm h-100 transition-effect">
+                <div class="card-body text-center">
+                    <i class="fas fa-laptop-code fa-3x mb-3 text-primary"></i>
+                    <h5>Web Development</h5>
+                    <p>Expertise in Django, Python, and full-stack development with responsive design.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="card border-0 shadow-sm h-100 transition-effect">
+                <div class="card-body text-center">
+                    <i class="fas fa-database fa-3x mb-3 text-primary"></i>
+                    <h5>Machine Learning</h5>
+                    <p>Building predictive models for real-world data analysis and decision-making.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="card border-0 shadow-sm h-100 transition-effect">
+                <div class="card-body text-center">
+                    <i class="fas fa-project-diagram fa-3x mb-3 text-primary"></i>
+                    <h5>Project Management</h5>
+                    <p>Delivering efficient and innovative solutions through teamwork and leadership.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5 text-center">
+    <h2 class="text-center mb-4">Let’s Work Together!</h2>
+    <a href="{% url 'contact' %}" class="btn btn-success btn-lg shadow">Contact Me</a>
+</div>
+{% endblock %}

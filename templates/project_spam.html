@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block title %}Spam Filtering with SVM{% endblock %}
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-center mb-4">Spam Filtering using Support Vector Machine</h1>
+    <p class="text-justify">This project uses a <strong>Support Vector Machine (SVM)</strong> classifier to distinguish between <strong>spam</strong> and <strong>legitimate</strong> messages based on text features. The model is trained on a dataset containing labeled examples of spam and non-spam messages, which allows it to generalize and accurately classify new messages.</p>
+
+    <h3>Technologies Used</h3>
+    <ul>
+        <li><strong>Python</strong>: The primary programming language for model development, data preprocessing, and integration with the web app.</li>
+        <li><strong>Streamlit</strong>: A Python library used to build the interactive web interface, which allows users to input text and receive real-time spam classification results.</li>
+        <li><strong>Scikit-learn</strong>: The machine learning library used for implementing the <strong>SVM</strong> classifier, along with preprocessing steps like text vectorization and data scaling.</li>
+        <li><strong>Natural Language Processing (NLP)</strong>: Various NLP techniques were used to transform text data into a format suitable for machine learning models, such as <strong>TF-IDF</strong> (Term Frequency-Inverse Document Frequency).</li>
+    </ul>
+
+    <h3>GitHub Repository</h3>
+    <p class="text-justify">You can find the complete source code and detailed implementation of this project on my GitHub repository:</p>
+    <a href="https://github.com/Aditya-Rachabattuni/Spam_Filtering_ML.git" class="btn btn-primary" target="_blank">
+        View GitHub Repository
+    </a>
+
+    <h3>Project Overview</h3>
+    <p class="text-justify">The goal of this project was to create a real-time spam detection tool using <strong>Support Vector Machines (SVM)</strong>. SVM is a powerful supervised learning algorithm that works well for binary classification tasks like distinguishing between spam and legitimate messages.</p>
+    <p class="text-justify">The model is trained using a dataset of messages, where each message is labeled as either "spam" or "not spam." The <strong>SVM</strong> classifier learns to distinguish between these classes by identifying patterns in the text features. Once trained, the model can be used to classify incoming messages in real-time.</p>
+    <p class="text-justify">The interactive interface for this tool was built using <strong>Streamlit</strong>, which allows users to input text and instantly see whether the message is classified as <strong>spam</strong> or <strong>legitimate</strong>.</p>
+
+    <h3>Data Collection & Preprocessing</h3>
+    <p class="text-justify">The dataset used in this project contains labeled text messages. Some key steps involved in preparing the data for model training include:</p>
+    <ul>
+        <li><strong>Text Preprocessing:</strong> Raw text data needs to be cleaned and transformed before it can be used to train machine learning models. This involves removing stop words, punctuation, and special characters, and converting all text to lowercase.</li>
+        <li><strong>Tokenization:</strong> Tokenization is the process of splitting the text into individual words or tokens. These tokens serve as the features for the classification model.</li>
+        <li><strong>TF-IDF Vectorization:</strong> We used the <strong>TF-IDF (Term Frequency-Inverse Document Frequency)</strong> technique to convert the text data into a numerical format. This method helps capture the importance of words based on their frequency in the message and across the entire dataset.</li>
+        <li><strong>Label Encoding:</strong> The messages were labeled as "spam" or "not spam." These labels were encoded into numerical values (0 for "not spam" and 1 for "spam") to be used in the training process.</li>
+    </ul>
+
+    <h3>Model Development</h3>
+    <p class="text-justify">The spam detection model was built using the <strong>Support Vector Machine (SVM)</strong> algorithm, which is well-suited for text classification tasks. The steps involved in developing the model are:</p>
+    <ul>
+        <li><strong>Training the SVM Classifier:</strong> We used Scikit-learn's <strong>SVC (Support Vector Classifier)</strong> implementation to train the model. The model is trained using the <strong>TF-IDF</strong> transformed text features as input and the encoded labels (spam or not) as output.</li>
+        <li><strong>Hyperparameter Tuning:</strong> We tuned the <strong>SVM</strong> classifier’s hyperparameters (such as the regularization parameter C and the kernel type) using cross-validation and grid search to achieve the best possible accuracy.</li>
+        <li><strong>Model Evaluation:</strong> The model's performance was evaluated using metrics such as <strong>accuracy</strong>, <strong>precision</strong>, <strong>recall</strong>, and <strong>F1-score</strong>. The confusion matrix was also used to visualize the number of true positives, false positives, true negatives, and false negatives.</li>
+    </ul>
+    <p class="text-justify">After training, the model was able to classify text messages with high accuracy, ensuring that legitimate messages were not misclassified as spam, and vice versa.</p>
+
+    <h3>Web Application Interface</h3>
+    <p class="text-justify">The interactive web interface for the spam filtering tool was built using <strong>Streamlit</strong>, a Python library that allows for rapid development of machine learning web applications. The following features were incorporated into the application:</p>
+    <ul>
+        <li><strong>Text Input:</strong> Users can input a message in a text box, and the system will predict whether it is spam or not based on the model’s classification.</li>
+        <li><strong>Real-Time Spam Classification:</strong> The input message is instantly classified as either "Spam" or "Not Spam," and the result is displayed on the screen.</li>
+        <li><strong>Feedback System:</strong> After seeing the classification, users can submit feedback on whether the classification was correct, allowing for model improvement and evaluation.</li>
+        <li><strong>Model Performance Metrics:</strong> Users can view model performance metrics such as <strong>accuracy</strong>, <strong>precision</strong>, <strong>recall</strong>, and <strong>F1-score</strong> directly on the interface, allowing them to evaluate the model’s effectiveness.</li>
+    </ul>
+
+    <h3>Key Features</h3>
+    <ul>
+        <li>Real-time spam classification using an <strong>SVM</strong> classifier trained on text features.</li>
+        <li>User-friendly and interactive interface built with <strong>Streamlit</strong> for easy text input and spam prediction.</li>
+        <li>Text preprocessing with <strong>TF-IDF vectorization</strong> and NLP techniques to extract meaningful features from the text data.</li>
+        <li>Model performance metrics displayed on the interface to help users understand the classifier's effectiveness.</li>
+        <li>Continuous learning feature, where users can provide feedback on the predictions to improve model accuracy over time.</li>
+    </ul>
+
+    <h3>Challenges & Future Work</h3>
+    <p class="text-justify">While developing the project, some challenges were encountered, including:</p>
+    <ul>
+        <li><strong>Imbalanced Dataset:</strong> Spam datasets often contain more legitimate messages than spam, which can lead to biased predictions. Future work will involve using techniques like <strong>SMOTE</strong> (Synthetic Minority Over-sampling Technique) to balance the dataset and improve model performance.</li>
+    </ul>
+</div>
+{% endblock %}

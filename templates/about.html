@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}About Me{% endblock %}
+{% load static %}
+{% block content %}
+<div class="row align-items-center my-5">
+    <div class="col-lg-6 col-md-12 text-center mb-4 mb-lg-0">
+        <img src="{% static 'images/profile.jpg' %}" class="img-fluid img-hover rounded" alt="Profile Picture" width="300">  <!-- Adjust width as needed -->
+    </div>
+    <div class="col-lg-6 col-md-12">
+        <h2>About Me</h2>
+        <p class="text-justify">I am Aditya Rachabattuni, a passionate and driven <strong>B.Tech graduate</strong> in Computer Science from <strong>DRK Institute of Science and Technology</strong>, affiliated with <strong>JNTUH</strong>. With a <strong>CGPA of 7.51 (First Class with Distinction)</strong>, I have a solid academic foundation that I continually apply to real-world projects and challenges.</p>
+
+        <p class="text-justify">I have hands-on experience in <strong>software development</strong>, <strong>machine learning</strong>, and <strong>web technologies</strong>, complemented by a strong foundation in problem-solving, teamwork, and leadership. I am always eager to learn new technologies, adapt to industry trends, and take on challenging tasks that help me grow professionally.</p>
+
+        <h3>Internship Experience</h3>
+        <p><strong>Software Engineer Intern</strong> at <em>Datapoint IT and Hardware Tech Pvt Ltd</em></p>
+        <p><strong>Duration:</strong> August 2023 - February 2024</p>
+        <ul>
+            <li>Developed machine learning algorithms for project optimization and automation.</li>
+            <li>Worked on <strong>Python</strong>, <strong>Django</strong>, and <strong>SQL</strong> for developing real-time applications and database management systems.</li>
+            <li>Collaborated with cross-functional teams to integrate innovative solutions.</li>
+            <li>Demonstrated <strong>leadership</strong> by taking initiative in problem-solving and improving existing systems.</li>
+        </ul>
+        <div class="text-center mt-4">
+            <a href="{% url 'more_about_me' %}" class="btn btn-primary btn-lg">Learn More About Me</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
